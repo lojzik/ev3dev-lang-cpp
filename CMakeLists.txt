@@ -17,6 +17,7 @@ add_library(ev3dev STATIC ev3dev.cpp)
 function(add_ev3_executable target sources)
     add_executable(${target} ${sources})
     target_link_libraries(${target} ev3dev pthread)
+    install(TARGETS ${target} RUNTIME DESTINATION .)	
 endfunction()
 
 enable_testing()
